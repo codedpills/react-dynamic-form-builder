@@ -23,6 +23,16 @@ const InputButtons = (props) => {
     };
     props.multiLineInput(input);
   };
+  const createNumberInput = () => {
+    const input = {
+      name: `number-${uuidv4()}`,
+      type: "number",
+      label: "Number",
+      placeholder: "Enter number",
+      predefinedValue: "",
+    };
+    props.numberInput(input);
+  };
   return (
     <>
       <Button variant="outline-secondary" block onClick={createSingleLineInput}>
@@ -31,7 +41,7 @@ const InputButtons = (props) => {
       <Button variant="outline-secondary" block onClick={createMultiLineInput}>
         Multiple Line
       </Button>
-      <Button variant="outline-secondary" block>
+      <Button variant="outline-secondary" block onClick={createNumberInput}>
         Number
       </Button>
       <Button variant="outline-secondary" block>

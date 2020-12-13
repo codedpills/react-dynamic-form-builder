@@ -9,13 +9,6 @@ class CreateForm extends Component {
     this.state = {
       formInputs: [
         {
-          name: "number-123lkfs",
-          type: "number",
-          label: "Number",
-          placeholder: "Enter number",
-          predefinedValue: "",
-        },
-        {
           name: "email-123lkfs",
           type: "email",
           label: "Email",
@@ -42,6 +35,11 @@ class CreateForm extends Component {
       formInputs: [...this.state.formInputs, input],
     });
   };
+  addNumberInput = (input) => {
+    this.setState({
+      formInputs: [...this.state.formInputs, input],
+    });
+  };
   render() {
     return (
       <Container>
@@ -52,6 +50,7 @@ class CreateForm extends Component {
             <InputButtons
               singleLineInput={this.addSingleLineInput}
               multiLineInput={this.addMultiLineInput}
+              numberInput={this.addNumberInput}
             />
           </Col>
           <Col xs={1}></Col>
