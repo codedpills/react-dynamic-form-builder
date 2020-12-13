@@ -43,6 +43,13 @@ const DynamicForm = ({ formInputs }) => {
             <Form.Control type="date" placeholder={input.placeholder} />
           </Form.Group>
         );
+      case "time":
+        return (
+          <Form.Group controlId={input.name} key={input.name}>
+            <Form.Label>{input.label}</Form.Label>
+            <Form.Control type="time" placeholder={input.placeholder} />
+          </Form.Group>
+        );
 
       default:
         break;

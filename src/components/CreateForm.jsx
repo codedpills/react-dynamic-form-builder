@@ -9,10 +9,10 @@ class CreateForm extends Component {
     this.state = {
       formInputs: [
         {
-          name: "date-123lkfs",
-          type: "date",
-          label: "Date",
-          placeholder: "Enter date",
+          name: "time-123lkfs",
+          type: "time",
+          label: "Time",
+          placeholder: "Enter time",
           predefinedValue: "",
         },
       ],
@@ -43,6 +43,11 @@ class CreateForm extends Component {
       formInputs: [...this.state.formInputs, input],
     });
   };
+  addTimeInput = (input) => {
+    this.setState({
+      formInputs: [...this.state.formInputs, input],
+    });
+  };
   render() {
     return (
       <Container>
@@ -56,6 +61,7 @@ class CreateForm extends Component {
               numberInput={this.addNumberInput}
               emailInput={this.addEmailInput}
               dateInput={this.addDateInput}
+              timeInput={this.addTimeInput}
             />
           </Col>
           <Col xs={1}></Col>

@@ -53,6 +53,16 @@ const InputButtons = (props) => {
     };
     props.dateInput(input);
   };
+  const createTimeInput = () => {
+    const input = {
+      name: `time-${uuidv4()}`,
+      type: "time",
+      label: "Time",
+      placeholder: "Enter time",
+      predefinedValue: "",
+    };
+    props.timeInput(input);
+  };
   return (
     <>
       <Button variant="outline-secondary" block onClick={createSingleLineInput}>
@@ -70,7 +80,7 @@ const InputButtons = (props) => {
       <Button variant="outline-secondary" block onClick={createDateInput}>
         Date
       </Button>
-      <Button variant="outline-secondary" block>
+      <Button variant="outline-secondary" block onClick={createTimeInput}>
         Time
       </Button>
       <Button variant="outline-secondary" block>
