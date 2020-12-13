@@ -46,6 +46,11 @@ class CreateForm extends Component {
       ],
     };
   }
+  singleLineInput = (input) => {
+    this.setState({
+      formInputs: [...this.state.formInputs, input],
+    });
+  };
   render() {
     return (
       <Container>
@@ -53,7 +58,7 @@ class CreateForm extends Component {
           <Col xs={4}>
             <h5>Options</h5>
             <hr />
-            <InputButtons />
+            <InputButtons singleLineInput={this.singleLineInput} />
           </Col>
           <Col xs={1}></Col>
           <Col>

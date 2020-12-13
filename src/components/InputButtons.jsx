@@ -1,10 +1,21 @@
 import React from "react";
 import { Button } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
 
-const InputButtons = () => {
+const InputButtons = (props) => {
+  const createSingleLineInput = () => {
+    const input = {
+      name: `singleline-${uuidv4()}`,
+      type: "singleLine",
+      label: "Single Line",
+      placeholder: "Enter text",
+      predefinedValue: "",
+    };
+    props.singleLineInput(input);
+  };
   return (
     <>
-      <Button variant="outline-secondary" block>
+      <Button variant="outline-secondary" block onClick={createSingleLineInput}>
         Single Line
       </Button>
       <Button variant="outline-secondary" block>
