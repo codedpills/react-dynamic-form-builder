@@ -40,7 +40,7 @@ const DynamicForm = ({ formInputs }) => {
         return (
           <Form.Group controlId={input.name} key={input.name}>
             <Form.Label>{input.label}</Form.Label>
-            <Form.Control type="email" placeholder={input.placeholder} />
+            <Form.Control type="date" placeholder={input.placeholder} />
           </Form.Group>
         );
 

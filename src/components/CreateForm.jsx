@@ -38,6 +38,11 @@ class CreateForm extends Component {
       formInputs: [...this.state.formInputs, input],
     });
   };
+  addDateInput = (input) => {
+    this.setState({
+      formInputs: [...this.state.formInputs, input],
+    });
+  };
   render() {
     return (
       <Container>
@@ -50,6 +55,7 @@ class CreateForm extends Component {
               multiLineInput={this.addMultiLineInput}
               numberInput={this.addNumberInput}
               emailInput={this.addEmailInput}
+              dateInput={this.addDateInput}
             />
           </Col>
           <Col xs={1}></Col>

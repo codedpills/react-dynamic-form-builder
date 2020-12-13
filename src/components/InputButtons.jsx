@@ -35,13 +35,23 @@ const InputButtons = (props) => {
   };
   const createEmailInput = () => {
     const input = {
-        name: `email-${uuidv4()}`,
-        type: "email",
-        label: "Email",
-        placeholder: "Enter email",
-        predefinedValue: "",
-      };
+      name: `email-${uuidv4()}`,
+      type: "email",
+      label: "Email",
+      placeholder: "Enter email",
+      predefinedValue: "",
+    };
     props.emailInput(input);
+  };
+  const createDateInput = () => {
+    const input = {
+      name: `date-${uuidv4()}`,
+      type: "date",
+      label: "Date",
+      placeholder: "Enter date",
+      predefinedValue: "",
+    };
+    props.dateInput(input);
   };
   return (
     <>
@@ -57,14 +67,14 @@ const InputButtons = (props) => {
       <Button variant="outline-secondary" block onClick={createEmailInput}>
         Email
       </Button>
-      <Button variant="outline-secondary" block>
-        Phone
-      </Button>
-      <Button variant="outline-secondary" block>
+      <Button variant="outline-secondary" block onClick={createDateInput}>
         Date
       </Button>
       <Button variant="outline-secondary" block>
         Time
+      </Button>
+      <Button variant="outline-secondary" block>
+        Phone
       </Button>
       <Button variant="outline-secondary" block>
         Address
