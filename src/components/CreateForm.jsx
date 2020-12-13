@@ -9,20 +9,6 @@ class CreateForm extends Component {
     this.state = {
       formInputs: [
         {
-          name: "singleline-123lkfs",
-          type: "singleLine",
-          label: "Single Line",
-          placeholder: "Enter text",
-          predefinedValue: "",
-        },
-        {
-          name: "multiline-123lkfs",
-          type: "multiLine",
-          label: "Multiline",
-          placeholder: "Enter long text",
-          predefinedValue: "",
-        },
-        {
           name: "number-123lkfs",
           type: "number",
           label: "Number",
@@ -46,7 +32,12 @@ class CreateForm extends Component {
       ],
     };
   }
-  singleLineInput = (input) => {
+  addSingleLineInput = (input) => {
+    this.setState({
+      formInputs: [...this.state.formInputs, input],
+    });
+  };
+  addMultiLineInput = (input) => {
     this.setState({
       formInputs: [...this.state.formInputs, input],
     });
@@ -58,7 +49,10 @@ class CreateForm extends Component {
           <Col xs={4}>
             <h5>Options</h5>
             <hr />
-            <InputButtons singleLineInput={this.singleLineInput} />
+            <InputButtons
+              singleLineInput={this.addSingleLineInput}
+              multiLineInput={this.addMultiLineInput}
+            />
           </Col>
           <Col xs={1}></Col>
           <Col>

@@ -13,12 +13,22 @@ const InputButtons = (props) => {
     };
     props.singleLineInput(input);
   };
+  const createMultiLineInput = () => {
+    const input = {
+      name: `multiline-${uuidv4()}`,
+      type: "multiLine",
+      label: "Multiline",
+      placeholder: "Enter long text",
+      predefinedValue: "",
+    };
+    props.multiLineInput(input);
+  };
   return (
     <>
       <Button variant="outline-secondary" block onClick={createSingleLineInput}>
         Single Line
       </Button>
-      <Button variant="outline-secondary" block>
+      <Button variant="outline-secondary" block onClick={createMultiLineInput}>
         Multiple Line
       </Button>
       <Button variant="outline-secondary" block>
