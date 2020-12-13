@@ -33,6 +33,16 @@ const InputButtons = (props) => {
     };
     props.numberInput(input);
   };
+  const createEmailInput = () => {
+    const input = {
+        name: `email-${uuidv4()}`,
+        type: "email",
+        label: "Email",
+        placeholder: "Enter email",
+        predefinedValue: "",
+      };
+    props.emailInput(input);
+  };
   return (
     <>
       <Button variant="outline-secondary" block onClick={createSingleLineInput}>
@@ -44,7 +54,7 @@ const InputButtons = (props) => {
       <Button variant="outline-secondary" block onClick={createNumberInput}>
         Number
       </Button>
-      <Button variant="outline-secondary" block>
+      <Button variant="outline-secondary" block onClick={createEmailInput}>
         Email
       </Button>
       <Button variant="outline-secondary" block>
