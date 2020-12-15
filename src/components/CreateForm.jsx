@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { v4 as uuidv4 } from "uuid";
+
 import DynamicForm from "./DynamicForm";
 import InputButtons from "./InputButtons";
 
@@ -18,6 +20,7 @@ class CreateForm extends Component {
       ],
     };
     this.removeInput = this.removeInput.bind(this);
+    this.duplicateInput = this.duplicateInput.bind(this);
   }
   addSingleLineInput = (input) => {
     this.setState({
@@ -49,6 +52,7 @@ class CreateForm extends Component {
       formInputs: [...this.state.formInputs, input],
     });
   };
+
   removeInput = (input) => {
     const filteredInputs = this.state.formInputs.filter(
       ({ name }) => name !== input.name
@@ -57,7 +61,18 @@ class CreateForm extends Component {
       formInputs: filteredInputs,
     });
   };
+
+  duplicateInput = (input, itemIndex) => {
+    const duplicate = { ...input, name: `${input.type}${uuidv4()}` };
+    const newArr = [...this.state.formInputs];
+    newArr.splice(itemIndex, 0, duplicate);
+    this.setState({
+      formInputs: newArr,
+    });
+  };
+
   render() {
+    console.log(this.state.formInputs.length);
     return (
       <Container>
         <Row>
@@ -80,6 +95,7 @@ class CreateForm extends Component {
             <DynamicForm
               formInputs={this.state.formInputs}
               removeInput={this.removeInput}
+              duplicateInput={this.duplicateInput}
             />
           </Col>
         </Row>

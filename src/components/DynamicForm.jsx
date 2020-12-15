@@ -3,7 +3,7 @@ import { Form, Col } from "react-bootstrap";
 import DeleteButton from "./DeleteButton";
 import DuplicateButton from "./DuplicateButton";
 
-const DynamicForm = ({ formInputs, removeInput }) => {
+const DynamicForm = ({ formInputs, removeInput, duplicateInput }) => {
   const formFields = formInputs.map((input, i) => {
     switch (input.type) {
       case "singleLine":
@@ -15,7 +15,11 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <DuplicateButton />
+                <DuplicateButton
+                  input={input}
+                  duplicateInput={duplicateInput}
+                  itemIndex={i}
+                />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
@@ -31,6 +35,11 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
+                <DuplicateButton
+                  input={input}
+                  duplicateInput={duplicateInput}
+                  itemIndex={i}
+                />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
@@ -50,6 +59,11 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
+                <DuplicateButton
+                  input={input}
+                  duplicateInput={duplicateInput}
+                  itemIndex={i}
+                />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
@@ -65,6 +79,11 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
+                <DuplicateButton
+                  input={input}
+                  duplicateInput={duplicateInput}
+                  itemIndex={i}
+                />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
@@ -80,6 +99,11 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
+                <DuplicateButton
+                  input={input}
+                  duplicateInput={duplicateInput}
+                  itemIndex={i}
+                />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
@@ -95,6 +119,11 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
+                <DuplicateButton
+                  input={input}
+                  duplicateInput={duplicateInput}
+                  itemIndex={i}
+                />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>

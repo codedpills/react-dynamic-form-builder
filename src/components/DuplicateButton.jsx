@@ -1,11 +1,16 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const DuplicateButton = () => {
+const DuplicateButton = ({ input, duplicateInput, itemIndex }) => {
   return (
-    <>
-      <Button variant="primary">Duplicate</Button>
-    </>
+    <Button
+      variant="primary"
+      onClick={() => {
+        duplicateInput(input, itemIndex);
+      }}
+    >
+      Duplicate
+    </Button>
   );
 };
 
