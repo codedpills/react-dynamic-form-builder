@@ -17,6 +17,7 @@ class CreateForm extends Component {
         },
       ],
     };
+    this.removeInput = this.removeInput.bind(this);
   }
   addSingleLineInput = (input) => {
     this.setState({
@@ -48,6 +49,14 @@ class CreateForm extends Component {
       formInputs: [...this.state.formInputs, input],
     });
   };
+  removeInput = (input) => {
+    const filteredInputs = this.state.formInputs.filter(
+      ({ name }) => name !== input.name
+    );
+    this.setState({
+      formInputs: filteredInputs,
+    });
+  };
   render() {
     return (
       <Container>
@@ -68,7 +77,10 @@ class CreateForm extends Component {
           <Col>
             <h5>Form</h5>
             <hr />
-            <DynamicForm formInputs={this.state.formInputs} />
+            <DynamicForm
+              formInputs={this.state.formInputs}
+              removeInput={this.removeInput}
+            />
           </Col>
         </Row>
       </Container>
