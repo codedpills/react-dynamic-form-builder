@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Col } from "react-bootstrap";
-import InputOptionButtons from "./InputOptionButtons";
+import DeleteButton from "./DeleteButton";
 
 const DynamicForm = ({ formInputs, removeInput }) => {
   const formFields = formInputs.map((input, i) => {
@@ -14,7 +14,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <InputOptionButtons removeInput={removeInput} input={input} />
+                <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
             <Form.Control type="text" placeholder={input.placeholder} />
@@ -29,7 +29,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <InputOptionButtons removeInput={removeInput} input={input} />
+                <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
             <Form.Control
@@ -48,7 +48,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <InputOptionButtons removeInput={removeInput} input={input} />
+                <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
             <Form.Control type="number" placeholder={input.placeholder} />
@@ -63,7 +63,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <InputOptionButtons removeInput={removeInput} input={input} />
+                <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
             <Form.Control type="email" placeholder={input.placeholder} />
@@ -78,7 +78,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <InputOptionButtons removeInput={removeInput} input={input} />
+                <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
             <Form.Control type="date" placeholder={input.placeholder} />
@@ -93,7 +93,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
-                <InputOptionButtons removeInput={removeInput} input={input} />
+                <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
             <Form.Control type="time" placeholder={input.placeholder} />

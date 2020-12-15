@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 
-const InputOptionButtons = ({ removeInput, input }) => {
+const DeleteButton = ({ removeInput, input }) => {
   return (
     <>
       <Button
@@ -29,4 +29,4 @@ const InputOptionButtons = ({ removeInput, input }) => {
   );
 };
 
-export default InputOptionButtons;
+export default DeleteButton;
