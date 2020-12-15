@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Col } from "react-bootstrap";
 import DeleteButton from "./DeleteButton";
+import DuplicateButton from "./DuplicateButton";
 
 const DynamicForm = ({ formInputs, removeInput }) => {
   const formFields = formInputs.map((input, i) => {
@@ -14,6 +15,7 @@ const DynamicForm = ({ formInputs, removeInput }) => {
               </Col>
 
               <Col className="text-right">
+                <DuplicateButton />
                 <DeleteButton removeInput={removeInput} input={input} />
               </Col>
             </Form.Row>
